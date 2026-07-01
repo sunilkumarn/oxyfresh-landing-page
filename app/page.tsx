@@ -20,7 +20,7 @@ const phoneLabel = "9656355566";
 const phoneNumber = "919656355566";
 const callLink = `tel:+${phoneNumber}`;
 const orderLink = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
-const publicAssetPath = process.env.GITHUB_PAGES === "true" ? "/oxyfresh-landing-page" : "";
+const publicAssetPath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const logoPath = `${publicAssetPath}/oxyfresh-logo.png`;
 
 const produceCards = [
