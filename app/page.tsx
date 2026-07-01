@@ -20,6 +20,8 @@ const phoneLabel = "9656355566";
 const phoneNumber = "919656355566";
 const callLink = `tel:+${phoneNumber}`;
 const orderLink = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
+const publicAssetPath = process.env.GITHUB_PAGES === "true" ? "/oxyfresh-landing-page" : "";
+const logoPath = `${publicAssetPath}/oxyfresh-logo.png`;
 
 const produceCards = [
   {
@@ -180,7 +182,7 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#home" aria-label="OxyFresh home">
           <Image
-            src="/oxyfresh-logo.png"
+            src={logoPath}
             alt="OxyFresh Vegetable & Fruits Shop"
             width={180}
             height={100}
@@ -528,7 +530,7 @@ export default function Home() {
           <div>
             <div className="footer-logo">
               <Image
-                src="/oxyfresh-logo.png"
+                src={logoPath}
                 alt="OxyFresh logo"
                 width={230}
                 height={140}
