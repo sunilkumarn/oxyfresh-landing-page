@@ -8,7 +8,6 @@ import {
   Leaf,
   Mail,
   MapPin,
-  MessageCircle,
   Phone,
   ShieldCheck,
   Sparkles,
@@ -167,10 +166,24 @@ function Badge({
   );
 }
 
+function WhatsAppIcon({ size = 18 }: { size?: number }) {
+  return (
+    <svg
+      aria-hidden="true"
+      fill="currentColor"
+      height={size}
+      viewBox="0 0 24 24"
+      width={size}
+    >
+      <path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2.05 22l5.26-1.38a9.9 9.9 0 0 0 4.73 1.2h.01c5.46 0 9.91-4.45 9.91-9.91a9.86 9.86 0 0 0-2.91-7Zm-7.01 15.24h-.01a8.22 8.22 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.25-4.38 8.25 8.25 0 0 1 8.24-8.24 8.19 8.19 0 0 1 5.83 2.42 8.22 8.22 0 0 1 2.41 5.83 8.26 8.26 0 0 1-8.25 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.98-.14.16-.29.18-.54.06-.25-.13-1.05-.39-2-1.23a7.47 7.47 0 0 1-1.38-1.72c-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.22.25-.86.84-.86 2.05s.89 2.38 1.01 2.55c.12.16 1.75 2.67 4.24 3.75.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.1-.22-.16-.47-.28Z" />
+    </svg>
+  );
+}
+
 function CtaButton({ children }: { children: React.ReactNode }) {
   return (
     <a className="btn btn-primary" href={orderLink}>
-      <MessageCircle size={18} />
+      <WhatsAppIcon size={18} />
       {children}
     </a>
   );
@@ -542,7 +555,7 @@ export default function Home() {
             </p>
             <div className="social-row">
               <a href={orderLink} aria-label="WhatsApp">
-                <MessageCircle size={18} />
+                <WhatsAppIcon size={18} />
               </a>
               <a href="#contact" aria-label="Instagram">
                 <Leaf size={18} />
@@ -563,7 +576,7 @@ export default function Home() {
           <div>
             <h3>Contact Us</h3>
             <p>
-              <MessageCircle size={17} />
+              <WhatsAppIcon size={17} />
               WhatsApp Orders
               <strong>{phoneLabel}</strong>
             </p>
